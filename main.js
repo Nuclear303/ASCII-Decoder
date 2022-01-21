@@ -116,7 +116,7 @@ const letters = {
 }
 document.querySelector("input[name=utf-8]").addEventListener("keyup",_=>{
 let val = document.querySelector("input[name=utf-8]").value;
-let stru= " ";
+let stru= "";
 for(let i = 0; i<val.length;i++){
     stru+=`${letters[val[i]]}\t`;
 }
@@ -125,7 +125,7 @@ document.querySelector("p[name=utftoascii]").innerHTML=stru;
 // ASCII chars to text
 document.querySelector("input[name=ascii]").addEventListener("keyup", _=>{
 let val = document.querySelector("input[name=ascii]").value;
-let stra= " ";
+let stra= "";
 let first  = 0;
 let sec = 3;
 val = String(val);
@@ -136,3 +136,11 @@ for(let i=0; i<val.length;i++){
 }
 document.querySelector("p[name=asciitoutf]").innerHTML=stra;
 })
+
+const copy = document.querySelectorAll('.copy')
+copy[0].addEventListener("click", _=>{
+   navigator.clipboard.writeText(document.querySelectorAll('p')[0].textContent)
+})
+copy[1].addEventListener("click", _=>{
+    navigator.clipboard.writeText(document.querySelectorAll('p')[1].textContent)
+ })
