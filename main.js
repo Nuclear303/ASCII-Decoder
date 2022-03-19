@@ -139,8 +139,16 @@ document.querySelector("p[name=asciitoutf]").innerHTML=stra;
 
 const copy = document.querySelectorAll('.copy')
 copy[0].addEventListener("click", _=>{
-   navigator.clipboard.writeText(document.querySelectorAll('p')[0].textContent)
+    navigator.clipboard.writeText(document.querySelectorAll('p')[0].textContent).then(_=>{
+        alert(`Skopiowano tekst: ${document.querySelectorAll('p')[0].textContent}`);
+    }, _=>{
+        alert("Nie udało się skopiować");
+    })
 })
 copy[1].addEventListener("click", _=>{
-    navigator.clipboard.writeText(document.querySelectorAll('p')[1].textContent)
+    navigator.clipboard.writeText(document.querySelectorAll('p')[1].textContent).then(_=>{
+        alert(`Skopiowano tekst: ${document.querySelectorAll('p')[1].textContent}`);
+    }, _=>{
+        alert("Nie udało się skopiować");
+    })
  })
